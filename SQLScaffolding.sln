@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36915.13 d17.14
+VisualStudioVersion = 17.14.36915.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLScaffolding", "SQLScaffolding.csproj", "{53FF4640-7DB6-4BA7-A337-8C0853F1DFE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labb_3__Anropa_databasen", "Labb_3__Anropa_databasen.csproj", "{53FF4640-7DB6-4BA7-A337-8C0853F1DFE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

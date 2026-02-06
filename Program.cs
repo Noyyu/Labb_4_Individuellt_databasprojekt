@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
-using SQLScaffolding;
+using Labb_3__Anropa_databasen;
+using Labb_3__Anropa_databasen.Models;
 
 namespace Labb_3___Anropa_databasen
 {
@@ -19,23 +20,15 @@ namespace Labb_3___Anropa_databasen
                 Console.WriteLine("1: See students");
                 Console.WriteLine("2: See classes");
                 Console.WriteLine("3: Add staff");
+                Console.WriteLine("4: See Staff");
+                Console.WriteLine("5: See Courses");
                 Console.WriteLine("0: Exit");
 
-                switch (UserNumberChoise(0, 3))
+                switch (UserNumberChoise(0, 5))
                 {
                     case 1:
                         Console.Clear();
-                        Console.WriteLine("1: Sort by last name");
-                        Console.WriteLine("2: Sort by first name");
-                        bool userBoolOne = UserNumberChoise(1, 2) == 2;
-                        Console.Clear();
-
-                        Console.WriteLine("1: Sort by decending order");
-                        Console.WriteLine("2: Sort by acanding order");
-                        bool userBoolTwo = UserNumberChoise(1, 2) == 1;
-                        Console.Clear();
-
-                        DbManager.PrintStudents(userBoolTwo, userBoolOne);
+                        DbManager.PrintStudentsInClasses();
                         break;
 
                     case 2:
@@ -54,20 +47,29 @@ namespace Labb_3___Anropa_databasen
                         string name;
 
                         Console.Clear();
-                        Console.WriteLine("Staff name?");
+                        Console.WriteLine("STAFF NAME");
                         name = Console.ReadLine();
                         Console.Clear();
 
-                        Console.WriteLine("Staff title?");
-                        Console.WriteLine("1: Admin");
-                        Console.WriteLine("2: Rektor");
-                        Console.WriteLine("3: Lärare");
+                        Console.WriteLine("STAFF TITLE");
+                        Console.WriteLine("1: Cleaner");
+                        Console.WriteLine("2: Teacher");
+                        Console.WriteLine("3: Admin");
                         Console.WriteLine("4: IT");
-                        Console.WriteLine("5: Vaktmästare");
+                        Console.WriteLine("5: Lecturer");
                         Console.WriteLine();
 
                         DbManager.AddStaff(name, UserNumberChoise(1, 5));
                         break;
+                    case 4:
+                        Console.Clear();
+                        DbManager.PrintStaffInDepartment();
+                        break;
+                    case 5:
+                        Console.Clear();
+                        DbManager.PrintCourses();
+                        break;
+
                     case 0:
                         exit = 0;
                         break;

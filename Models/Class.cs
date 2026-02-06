@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SQLScaffolding.Models;
+namespace Labb_3__Anropa_databasen.Models;
 
 public partial class Class
 {
