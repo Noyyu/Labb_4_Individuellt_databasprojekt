@@ -12,11 +12,18 @@ namespace Labb_3__Anropa_databasen
 {
     internal class DbManager
     {
-        public static void AddStaff(string name, int titleId)
+        public static void AddStaff(string name, string lastName, int titleId, float salary)
         {
             using (var context = new SchoolContext())
             {
-                var newStaff = new Staff { Name = name, TitleId = titleId };
+                var newStaff = new Staff
+                {
+                    Name = name,
+                    LastName = lastName,
+                    TitleId = titleId,
+                    Salary = (decimal)salary
+                };
+
                 context.Staff.Add(newStaff);
                 context.SaveChanges();
                 Console.WriteLine($"{newStaff.Name} has been added to the Staff Table");
@@ -25,6 +32,7 @@ namespace Labb_3__Anropa_databasen
             Console.WriteLine();
             Console.WriteLine("Press any key to continue..");
             Console.ReadKey();
+            Console.Clear();
         }
 
         public static void PrintCourses()
@@ -62,6 +70,7 @@ namespace Labb_3__Anropa_databasen
                 Console.WriteLine();
                 Console.WriteLine("Press any key to continue..");
                 Console.ReadKey();
+                Console.Clear();
             }
         }
         public static void PrintStaffInDepartment()
@@ -96,6 +105,7 @@ namespace Labb_3__Anropa_databasen
                 Console.WriteLine();
                 Console.WriteLine("Press any key to continue..");
                 Console.ReadKey();
+                Console.Clear();
             }
         }
 
@@ -104,6 +114,7 @@ namespace Labb_3__Anropa_databasen
         {
             using (var context = new SchoolContext())
             {
+                Console.Clear();
                 Console.WriteLine(new string('-', 50));
                 Console.WriteLine($"{" ", -15} {"CLASSES AND STUDENTS"}");
                 Console.WriteLine(new string('-', 50));
@@ -139,6 +150,7 @@ namespace Labb_3__Anropa_databasen
                 Console.WriteLine();
                 Console.WriteLine("Press any key to continue..");
                 Console.ReadKey();
+                Console.Clear();
             }
         }
 
