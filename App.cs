@@ -112,7 +112,6 @@ namespace Labb_3__Anropa_databasen
                     Title = d.Title
                 }).ToList();
 
-                
                 for (int i = 1; i <= departmentData.Count; i++)
                 {
                     Console.WriteLine($"{i} {departmentData.ElementAt(i - 1).Title}");
@@ -133,7 +132,6 @@ namespace Labb_3__Anropa_databasen
                 Console.WriteLine("Invalid choice");
             }
             return userChoise;
-        }
-        
+        } 
     }
 }
