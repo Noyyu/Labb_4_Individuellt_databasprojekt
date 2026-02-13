@@ -10,8 +10,6 @@ namespace Labb_3___Anropa_databasen
         {
             App.Menu();
         }
-
-         
     }
 }
 
