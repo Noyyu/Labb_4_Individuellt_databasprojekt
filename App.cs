@@ -1,4 +1,5 @@
 ﻿using Labb_3__Anropa_databasen.Models;
+using Microsoft.Data.SqlClient.DataClassification;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,14 +16,17 @@ namespace Labb_3__Anropa_databasen
             while (exit != 0)
             {
                 Console.Clear();
-                Console.WriteLine("1: See students");
-                Console.WriteLine("2: See classes");
+                Console.WriteLine("1: See all students");
+                Console.WriteLine("2: See class");
                 Console.WriteLine("3: Add staff");
-                Console.WriteLine("4: See Staff");
-                Console.WriteLine("5: See Courses");
+                Console.WriteLine("4: See all staff departments");
+                Console.WriteLine("5: See all courses");
+                Console.WriteLine("6: See student info");
+                Console.WriteLine("7: See all staff");
+                Console.WriteLine("8: Give a student a grade");
                 Console.WriteLine("0: Exit");
 
-                switch (UserNumberChoise(0, 5))
+                switch (UserNumberChoise(0, 8))
                 {
                     case 1:
                         Console.Clear();
@@ -72,7 +76,24 @@ namespace Labb_3__Anropa_databasen
                         Console.Clear();
                         DbManager.PrintCourses();
                         break;
-
+                    case 6:
+                        Console.Clear();
+                        Console.WriteLine("STUDENT ID");
+                        int studentID = -1;
+                        while (! int.TryParse(Console.ReadLine(), out studentID) || studentID <= 0 || !DbManager.PrintStudentInfo(studentID))
+                        {
+                            Console.WriteLine("Please enter a valid student ID");
+                            studentID = -1;
+                        }
+                        break;
+                    case 7:
+                        Console.Clear();
+                        DbManager.PrintStaffDetails();
+                        break;
+                    case 8:
+                        Console.Clear();
+                        DbManager.GiveStudentGrade();
+                        break;
                     case 0:
                         exit = 0;
                         break;
